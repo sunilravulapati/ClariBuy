@@ -1,9 +1,10 @@
 from google.cloud import aiplatform
 import vertexai.generative_models as generative_models
 from .prompts import build_explanation_prompt
+import os
 
-PROJECT_ID = "sylvan-airship-481816-p4"
-LOCATION = "us-central1"
+PROJECT_ID = os.getenv("GCP_PROJECT_ID")
+LOCATION = os.getenv("GCP_LOCATION")
 aiplatform.init(project=PROJECT_ID, location=LOCATION)
 model = generative_models.GenerativeModel("gemini-2.0-flash-001")
 def generate_psychometric_explanation(data: dict) -> str:

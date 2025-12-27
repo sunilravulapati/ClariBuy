@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Hero from "./pages/Hero";
 import CoreQuiz from "./pages/CoreQuiz";
 import Overview from "./pages/Overview";
@@ -6,8 +6,21 @@ import CategoryQuiz from "./pages/CategoryQuiz";
 import Results from "./pages/Results";
 import Layout from "./components/Layout";
 import "./index.css";
+import { auth } from "./firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // This function runs every time the auth state changes (login or logout)
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser); // This will now contain the photoURL, email, etc.
+    });
+
+    return () => unsubscribe(); // Cleanup the listener
+  }, []);
+
   const [step, setStep] = useState("hero");
   const [category, setCategory] = useState(null);
   const [results, setResults] = useState([]);
@@ -32,7 +45,7 @@ function App() {
   // ---------- Pages ----------
   if (step === "hero") {
     return (
-      <Layout showBack={false}>
+      <Layout showBack={false} user={user} onStartHero={() => goTo("core")}>
         <Hero onStart={() => goTo("core")} />
       </Layout>
     );
@@ -40,7 +53,7 @@ function App() {
 
   if (step === "core") {
     return (
-      <Layout showBack onBack={goBack}>
+      <Layout showBack onBack={goBack} user={user}>
         <CoreQuiz
           onDone={(profile) => {
             setCoreProfile(profile);
@@ -53,7 +66,7 @@ function App() {
 
   if (step === "overview") {
     return (
-      <Layout showBack onBack={goBack}>
+      <Layout showBack onBack={goBack} user={user}>
         <Overview
           onSelect={(cat) => {
             setCategory(cat);
@@ -66,7 +79,7 @@ function App() {
 
   if (step === "category") {
     return (
-      <Layout showBack onBack={goBack}>
+      <Layout showBack onBack={goBack} user={user}>
         <CategoryQuiz
           category={category}
           onDone={(res) => {
@@ -80,7 +93,7 @@ function App() {
 
   if (step === "results") {
     return (
-      <Layout showBack onBack={goBack}>
+      <Layout showBack onBack={goBack} user={user}>
         <Results
           category={category}
           results={results}

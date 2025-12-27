@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getOverview } from "../api";
 import ComparisonMode from "../components/ComparisonMode";
+import { exportBuyerReport } from "../utils/exportPDF";
 
 export default function Overview({ onSelect, profile }) {
   const [data, setData] = useState({});
@@ -214,6 +215,18 @@ export default function Overview({ onSelect, profile }) {
           </div>
         </div>
       )}
+      <div className="mt-10 flex flex-col gap-4">
+        <button 
+          onClick={() => exportBuyerReport(results[0], explanation, profile)}
+          className="w-full py-4 bg-slate-800 hover:bg-slate-700 text-white rounded-xl font-bold flex items-center justify-center gap-2 border border-slate-700 transition-all"
+        >
+          <span>📄</span> Download Buyer Persona Report
+        </button>
+        
+        <button onClick={() => window.location.reload()} className="text-slate-500 hover:text-white text-sm">
+          Take Test Again
+        </button>
+      </div>
     </div>
   );
 }

@@ -17,9 +17,15 @@ from .ai_explainer import model
 
 app = FastAPI()
 
+origins = [
+    "http://localhost:5173",
+    "https://sylvan-airship-481816-p4.web.app",
+    "https://claribuy-c65c4.web.app",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -1,6 +1,11 @@
 from pydantic import BaseModel
-from typing import Dict
+from typing import Dict, Optional
 
+class UserProfile(BaseModel):
+    user_id: str
+    email: str
+    traits: Dict[str, float]  # Normalized scores (0.0 - 1.0)
+    history: list = []
 class CoreAnswers(BaseModel):
     answers: Dict[str, float]  # Maps question_id -> selected option score
 
