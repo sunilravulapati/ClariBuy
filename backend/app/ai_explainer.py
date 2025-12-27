@@ -5,10 +5,8 @@ from .prompts import build_explanation_prompt
 PROJECT_ID = "sylvan-airship-481816-p4"
 LOCATION = "us-central1"
 aiplatform.init(project=PROJECT_ID, location=LOCATION)
-
+model = generative_models.GenerativeModel("gemini-2.0-flash-001")
 def generate_psychometric_explanation(data: dict) -> str:
-    model = generative_models.GenerativeModel("gemini-2.0-flash-001")
-
     # 1. Build the specialized psychometric prompt
     prompt = build_explanation_prompt(data)
 

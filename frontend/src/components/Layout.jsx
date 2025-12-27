@@ -3,7 +3,12 @@ export default function Layout({ children, onBack, showBack, onStartHero }) {
     <div className="min-h-screen bg-[#0a0f1c] text-white">
       {/* Top bar */}
       <nav className="flex items-center justify-between px-8 py-4 border-b border-slate-800/50 bg-[#0a0f1c]/80 backdrop-blur-md sticky top-0 z-50">
-        <h1 className="text-xl font-bold tracking-tight">ClariBuy</h1>
+        <h1
+          onClick={() => (window.location.href = "/")}
+          className="text-2xl font-bold cursor-pointer hover:text-indigo-400 transition tracking-tight"
+        >
+          ClariBuy
+        </h1>
 
         <div className="flex items-center gap-4">
           {showBack && (
@@ -14,10 +19,10 @@ export default function Layout({ children, onBack, showBack, onStartHero }) {
               ← Back
             </button>
           )}
-          
+
           {/* Show 'Get Started' in Nav only if we are on Hero (no back button) */}
           {!showBack && onStartHero && (
-             <button
+            <button
               onClick={onStartHero}
               className="px-4 py-1.5 bg-white text-black text-sm font-medium rounded hover:bg-gray-200 transition"
             >

@@ -1,26 +1,394 @@
 [
   {
-    "id": "p1",
-    "name": "Gaming PC Alpha",
+    "id": "pc1",
+    "name": "Apple MacBook Air (M3)",
     "category": "pc",
-    "price": 75000
+    "price": 99900,
+    "top_feature": "Fanless design with the M3 chip for silent, industry-leading efficiency",
+    "specs": {
+      "performance": 0.85,
+      "budget": 0.4,
+      "brand": 0.95,
+      "simplicity": 0.95,
+      "longevity": 0.9
+    }
   },
   {
-    "id": "p2",
-    "name": "Office PC Lite",
+    "id": "pc2",
+    "name": "ASUS ROG Strix G16",
     "category": "pc",
-    "price": 45000
+    "price": 125000,
+    "top_feature": "NVIDIA RTX 40-series graphics with tri-fan cooling for hardcore gaming",
+    "specs": {
+      "performance": 0.98,
+      "budget": 0.2,
+      "brand": 0.85,
+      "simplicity": 0.3,
+      "longevity": 0.75
+    }
   },
   {
-    "id": "p3",
-    "name": "Smart TV 55\"",
-    "category": "tv",
-    "price": 60000
+    "id": "pc3",
+    "name": "Acer Swift Go 14",
+    "category": "pc",
+    "price": 59990,
+    "top_feature": "Ultra-portable OLED display offering the best color-to-price ratio",
+    "specs": {
+      "performance": 0.7,
+      "budget": 0.8,
+      "brand": 0.6,
+      "simplicity": 0.85,
+      "longevity": 0.6
+    }
   },
   {
-    "id": "p4",
-    "name": "Budget Smart TV",
+    "id": "pc4",
+    "name": "Dell Inspiron 15",
+    "category": "pc",
+    "price": 38000,
+    "top_feature": "Spill-resistant keyboard and durable chassis for everyday student use",
+    "specs": {
+      "performance": 0.4,
+      "budget": 0.9,
+      "brand": 0.8,
+      "simplicity": 0.9,
+      "longevity": 0.7
+    }
+  },
+  {
+    "id": "pc5",
+    "name": "Lenovo ThinkPad X1 Carbon",
+    "category": "pc",
+    "price": 155000,
+    "top_feature": "Military-grade durability (MIL-STD 810H) with an iconic tactile keyboard",
+    "specs": {
+      "performance": 0.8,
+      "budget": 0.2,
+      "brand": 0.9,
+      "simplicity": 0.75,
+      "longevity": 1.0
+    }
+  },
+  {
+    "id": "pc6",
+    "name": "HP Chromebook 15",
+    "category": "pc",
+    "price": 24000,
+    "top_feature": "Fast-booting ChromeOS designed for essential web-based tasks",
+    "specs": {
+      "performance": 0.3,
+      "budget": 1.0,
+      "brand": 0.7,
+      "simplicity": 1.0,
+      "longevity": 0.5
+    }
+  },
+  {
+    "id": "pc7",
+    "name": "Microsoft Surface Laptop 5",
+    "category": "pc",
+    "price": 119990,
+    "top_feature": "Precision Haptic touchpad with Dolby Atmos for premium multimedia work",
+    "specs": {
+      "performance": 0.75,
+      "budget": 0.35,
+      "brand": 0.88,
+      "simplicity": 0.88,
+      "longevity": 0.82
+    }
+  },
+  {
+    "id": "pc8",
+    "name": "MSI Creator Z16",
+    "category": "pc",
+    "price": 175000,
+    "top_feature": "QHD+ touchscreen with NVIDIA Studio drivers optimized for creative professionals",
+    "specs": {
+      "performance": 0.92,
+      "budget": 0.15,
+      "brand": 0.75,
+      "simplicity": 0.5,
+      "longevity": 0.78
+    }
+  },
+  {
+    "id": "tv1",
+    "name": "Sony BRAVIA XR A80L OLED",
     "category": "tv",
-    "price": 35000
+    "price": 165000,
+    "top_feature": "Acoustic Surface Audio+ where the entire screen acts as a high-fidelity speaker",
+    "specs": {
+      "performance": 0.9,
+      "budget": 0.2,
+      "brand": 1.0,
+      "simplicity": 0.7,
+      "longevity": 0.85
+    }
+  },
+  {
+    "id": "tv2",
+    "name": "Samsung Crystal 4K Vivid",
+    "category": "tv",
+    "price": 32990,
+    "top_feature": "PurColor technology providing a massive library of shades for entry-level 4K",
+    "specs": {
+      "performance": 0.5,
+      "budget": 0.95,
+      "brand": 0.85,
+      "simplicity": 0.9,
+      "longevity": 0.6
+    }
+  },
+  {
+    "id": "tv3",
+    "name": "LG C3 Series OLED",
+    "category": "tv",
+    "price": 140000,
+    "top_feature": "α9 AI Processor Gen6 for perfect blacks and infinite contrast ratios",
+    "specs": {
+      "performance": 0.95,
+      "budget": 0.3,
+      "brand": 0.9,
+      "simplicity": 0.8,
+      "longevity": 0.8
+    }
+  },
+  {
+    "id": "tv4",
+    "name": "Xiaomi Smart TV X Series",
+    "category": "tv",
+    "price": 28000,
+    "top_feature": "PatchWall interface aggregating all your streaming apps into one simple view",
+    "specs": {
+      "performance": 0.6,
+      "budget": 1.0,
+      "brand": 0.6,
+      "simplicity": 0.95,
+      "longevity": 0.5
+    }
+  },
+  {
+    "id": "tv5",
+    "name": "TCL C645 QLED",
+    "category": "tv",
+    "price": 45000,
+    "top_feature": "Quantum Dot technology for vibrant brightness at a mid-range price point",
+    "specs": {
+      "performance": 0.75,
+      "budget": 0.7,
+      "brand": 0.5,
+      "simplicity": 0.8,
+      "longevity": 0.65
+    }
+  },
+  {
+    "id": "tv6",
+    "name": "Hisense U7K Mini-LED",
+    "category": "tv",
+    "price": 65000,
+    "top_feature": "144Hz VRR panel making it the best high-performance choice for console gamers",
+    "specs": {
+      "performance": 0.9,
+      "budget": 0.6,
+      "brand": 0.5,
+      "simplicity": 0.7,
+      "longevity": 0.7
+    }
+  },
+  {
+    "id": "tv7",
+    "name": "OnePlus Y1S Edge",
+    "category": "tv",
+    "price": 22999,
+    "top_feature": "Bezel-less design with Oxygen Play for seamless content discovery",
+    "specs": {
+      "performance": 0.55,
+      "budget": 0.98,
+      "brand": 0.65,
+      "simplicity": 0.92,
+      "longevity": 0.52
+    }
+  },
+  {
+    "id": "tv8",
+    "name": "Samsung Neo QLED QN90C",
+    "category": "tv",
+    "price": 195000,
+    "top_feature": "Quantum Matrix Technology Pro with Neural Quantum Processor for cinematic HDR",
+    "specs": {
+      "performance": 0.98,
+      "budget": 0.15,
+      "brand": 0.95,
+      "simplicity": 0.65,
+      "longevity": 0.88
+    }
+  },
+  {
+    "id": "ph1",
+    "name": "iPhone 15 Pro",
+    "category": "phone",
+    "price": 134900,
+    "top_feature": "Aerospace-grade titanium design with the A17 Pro chip for pro-level gaming",
+    "specs": {
+      "performance": 0.95,
+      "budget": 0.2,
+      "brand": 1.0,
+      "simplicity": 0.9,
+      "longevity": 0.85
+    }
+  },
+  {
+    "id": "ph2",
+    "name": "Google Pixel 8a",
+    "category": "phone",
+    "price": 52999,
+    "top_feature": "AI-first camera experience with Best Take and Magic Editor features",
+    "specs": {
+      "performance": 0.75,
+      "budget": 0.75,
+      "brand": 0.8,
+      "simplicity": 0.95,
+      "longevity": 0.7
+    }
+  },
+  {
+    "id": "ph3",
+    "name": "Samsung Galaxy S24 Ultra",
+    "category": "phone",
+    "price": 129999,
+    "top_feature": "S Pen integration with Galaxy AI for real-time translation and note-taking",
+    "specs": {
+      "performance": 0.93,
+      "budget": 0.22,
+      "brand": 0.92,
+      "simplicity": 0.75,
+      "longevity": 0.82
+    }
+  },
+  {
+    "id": "ph4",
+    "name": "OnePlus 12R",
+    "category": "phone",
+    "price": 42999,
+    "top_feature": "100W SUPERVOOC charging with flagship-grade Snapdragon 8 Gen 2 at mid-range pricing",
+    "specs": {
+      "performance": 0.85,
+      "budget": 0.8,
+      "brand": 0.7,
+      "simplicity": 0.82,
+      "longevity": 0.68
+    }
+  },
+  {
+    "id": "ph5",
+    "name": "Nothing Phone (2)",
+    "category": "phone",
+    "price": 44999,
+    "top_feature": "Glyph Interface with customizable LED light patterns for unique notifications",
+    "specs": {
+      "performance": 0.78,
+      "budget": 0.78,
+      "brand": 0.6,
+      "simplicity": 0.85,
+      "longevity": 0.65
+    }
+  },
+  {
+    "id": "ph6",
+    "name": "Xiaomi 13T Pro",
+    "category": "phone",
+    "price": 49999,
+    "top_feature": "Leica-branded triple camera system with 120W HyperCharge for power users",
+    "specs": {
+      "performance": 0.82,
+      "budget": 0.75,
+      "brand": 0.75,
+      "simplicity": 0.7,
+      "longevity": 0.7
+    }
+  },
+  {
+    "id": "hp1",
+    "name": "Sony WH-1000XM5",
+    "category": "headphone",
+    "price": 29990,
+    "top_feature": "Industry-leading noise cancellation with 8 microphones and Auto NC Optimizer",
+    "specs": {
+      "performance": 0.9,
+      "budget": 0.5,
+      "brand": 0.95,
+      "simplicity": 0.8,
+      "longevity": 0.8
+    }
+  },
+  {
+    "id": "hp2",
+    "name": "Sennheiser HD 600",
+    "category": "headphone",
+    "price": 24990,
+    "top_feature": "Open-back audiophile design with natural, spatial sound reproduction",
+    "specs": {
+      "performance": 0.95,
+      "budget": 0.6,
+      "brand": 0.9,
+      "simplicity": 0.4,
+      "longevity": 0.95
+    }
+  },
+  {
+    "id": "hp3",
+    "name": "Apple AirPods Max",
+    "category": "headphone",
+    "price": 59900,
+    "top_feature": "Computational audio with Adaptive EQ and Spatial Audio for Apple ecosystem users",
+    "specs": {
+      "performance": 0.88,
+      "budget": 0.2,
+      "brand": 1.0,
+      "simplicity": 0.95,
+      "longevity": 0.85
+    }
+  },
+  {
+    "id": "hp4",
+    "name": "Bose QuietComfort 45",
+    "category": "headphone",
+    "price": 26990,
+    "top_feature": "Legendary TriPort acoustic architecture with Aware Mode for ambient listening",
+    "specs": {
+      "performance": 0.85,
+      "budget": 0.55,
+      "brand": 0.92,
+      "simplicity": 0.9,
+      "longevity": 0.82
+    }
+  },
+  {
+    "id": "hp5",
+    "name": "JBL Tune 760NC",
+    "category": "headphone",
+    "price": 5999,
+    "top_feature": "Active Noise Cancellation with 50-hour battery life at an entry-level price",
+    "specs": {
+      "performance": 0.6,
+      "budget": 0.95,
+      "brand": 0.75,
+      "simplicity": 0.92,
+      "longevity": 0.65
+    }
+  },
+  {
+    "id": "hp6",
+    "name": "Audio-Technica ATH-M50xBT2",
+    "category": "headphone",
+    "price": 19990,
+    "top_feature": "Studio-grade 45mm drivers with wireless convenience and pro-level sound isolation",
+    "specs": {
+      "performance": 0.92,
+      "budget": 0.68,
+      "brand": 0.85,
+      "simplicity": 0.65,
+      "longevity": 0.88
+    }
   }
 ]

@@ -1,13 +1,13 @@
 from pydantic import BaseModel
-from typing import Dict, Optional
+from typing import Dict
 
 class CoreAnswers(BaseModel):
-    answers: Dict[str, float]
+    answers: Dict[str, float]  # Maps question_id -> selected option score
 
 class CategoryAnswers(BaseModel):
-    category: str
-    answers: Dict[str, float]
+    answers: Dict[str, float]  # Maps trait -> accumulated weight
+    # Example: {"performance": 0.5, "budget": 0.3, "brand": 0.2, ...}
 
 class Feedback(BaseModel):
-    category: str
-    satisfied: bool
+    rating: int
+    comment: str = ""
