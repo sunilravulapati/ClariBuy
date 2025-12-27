@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p1",
+    "name": "Gaming PC Alpha",
+    "category": "pc",
+    "price": 75000
+  },
+  {
+    "id": "p2",
+    "name": "Office PC Lite",
+    "category": "pc",
+    "price": 45000
+  },
+  {
+    "id": "p3",
+    "name": "Smart TV 55\"",
+    "category": "tv",
+    "price": 60000
+  },
+  {
+    "id": "p4",
+    "name": "Budget Smart TV",
+    "category": "tv",
+    "price": 35000
+  }
+]
