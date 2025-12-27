@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import json
+from typing import Optional
 
 from .models import CoreAnswers, CategoryAnswers, Feedback
 from .core_questions import CORE_QUESTIONS
@@ -8,6 +9,7 @@ from .category_questions import CATEGORY_QUESTIONS
 from .profiler import build_profile
 from .recommender import recommend
 from .personas import assign_persona
+from .ai_explainer import generate_psychometric_explanation
 
 app = FastAPI()
 
@@ -21,13 +23,16 @@ app.add_middleware(
 
 # ------------------ ROUTES BELOW ------------------
 
-@app.post("/recommendations/overview")
-def overview(data: dict):
-    return {"message": "Overview works"}
-
 @app.post("/explain")
 def explain(data: dict):
-    return {"explanation": "Test explanation"}
+    """
+    Expects data containing:
+    - category
+    - dominant_traits
+    - decision_style
+    - recommended_products (list of name/price)
+    """
+    return {"explanation": generate_psychometric_explanation(data)}
 
 with open("data/products.json") as f:
     PRODUCTS = json.load(f)
@@ -45,7 +50,7 @@ def submit_core_answers(data: CoreAnswers):
     return {"persona": assign_persona(profile)}
 
 @app.post("/recommendations/overview")
-def overview(data: dict):
+def overview(data: Optional[dict] = None):
     return {
         "detail": [
             {

@@ -4,6 +4,7 @@ import CoreQuiz from "./pages/CoreQuiz";
 import Overview from "./pages/Overview";
 import CategoryQuiz from "./pages/CategoryQuiz";
 import Results from "./pages/Results";
+import Layout from "./components/Layout";
 import "./index.css";
 
 function App() {
@@ -11,52 +12,87 @@ function App() {
   const [category, setCategory] = useState(null);
   const [results, setResults] = useState([]);
   const [coreProfile, setCoreProfile] = useState(null);
+  const [history, setHistory] = useState([]);
 
+  // ---------- Navigation helpers ----------
+  function goTo(nextStep) {
+    setHistory(prev => [...prev, step]);
+    setStep(nextStep);
+  }
 
-  if (step === "hero")
-    return <Hero onStart={() => setStep("core")} />;
+  function goBack() {
+    setHistory(prev => {
+      const copy = [...prev];
+      const last = copy.pop();
+      setStep(last || "hero");
+      return copy;
+    });
+  }
 
-
-  if (step === "core")
+  // ---------- Pages ----------
+  if (step === "hero") {
     return (
-      <CoreQuiz
-        onDone={(profile) => {
-          setCoreProfile(profile);
-          setStep("overview");
-        }}
-      />
+      <Layout showBack={false}>
+        <Hero onStart={() => goTo("core")} />
+      </Layout>
     );
+  }
 
-
-  if (step === "overview")
+  if (step === "core") {
     return (
-      <Overview
-        onSelect={cat => {
-          setCategory(cat);
-          setStep("category");
-        }}
-      />
+      <Layout showBack onBack={goBack}>
+        <CoreQuiz
+          onDone={(profile) => {
+            setCoreProfile(profile);
+            goTo("overview");
+          }}
+        />
+      </Layout>
     );
+  }
 
-  if (step === "category")
+  if (step === "overview") {
     return (
-      <CategoryQuiz
-        category={category}
-        onDone={res => {
-          setResults(res);
-          setStep("results");
-        }}
-      />
+      <Layout showBack onBack={goBack}>
+        <Overview
+          onSelect={(cat) => {
+            setCategory(cat);
+            goTo("category");
+          }}
+        />
+      </Layout>
     );
+  }
 
-  if (step === "results")
+  if (step === "category") {
     return (
-      <Results
-        category={category}
-        results={results}
-        onRestart={() => setStep("hero")}
-      />
+      <Layout showBack onBack={goBack}>
+        <CategoryQuiz
+          category={category}
+          onDone={(res) => {
+            setResults(res);
+            goTo("results");
+          }}
+        />
+      </Layout>
     );
+  }
+
+  if (step === "results") {
+    return (
+      <Layout showBack onBack={goBack}>
+        <Results
+          category={category}
+          results={results}
+          profile={coreProfile}
+          onRestart={() => {
+            setHistory([]);
+            setStep("hero");
+          }}
+        />
+      </Layout>
+    );
+  }
 
   return null;
 }

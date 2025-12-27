@@ -38,6 +38,16 @@ const QUESTION_POOL = {
         { label: "Flexible & configurable", weights: { performance: 0.5 } }
       ]
     }
+  ],
+  general: [
+    {
+      id: "general_1",
+      text: "When making a purchase, what matters most overall?",
+      options: [
+        { label: "Long-term satisfaction", weights: { longevity: 1 } },
+        { label: "Best value right now", weights: { budget: 1 } }
+      ]
+    }
   ]
 };
 
