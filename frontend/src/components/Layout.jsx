@@ -70,19 +70,12 @@ export default function Layout({
                 Logout
               </button>
             </div>
-          ) : !showBack && onStartHero ? (
-            <button
-              onClick={onStartHero}
-              className="px-4 py-1.5 bg-white text-black text-sm font-medium rounded hover:bg-gray-200 transition"
-            >
-              Get Started
-            </button>
           ) : (
             <button
               onClick={handleSignIn}
               className="px-4 py-2 bg-indigo-600 rounded-lg text-sm font-bold hover:bg-indigo-500 transition"
             >
-              Sign In
+              Get Started
             </button>
           )}
         </div>
